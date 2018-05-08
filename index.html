@@ -91,7 +91,7 @@
 	      <div class="tab" id="tab_open_pdf" style="display: none">
 	        <h3>View your PDF</h3>
 
-	        <button id="open_pdf_btn">Open your PDF</button>
+	        <a id="open_pdf_btn" download="maps.pdf">Open your PDF</a>
 	        <p>
 	          Your LaTeX code is now compiled to a PDF document. The document is converted to a <a href="https://developer.mozilla.org/en-US/docs/data_URIs">data URI</a> that makes it possible to interpret the format correctly.
 	        </p>
@@ -146,6 +146,7 @@
 
 	            showOpenButton(true);
 	            window.location.href = "#open_pdf";
+							document.getElementById("open_pdf_btn").href = pdf_dataurl;
 	            document.getElementById("open_pdf_btn").focus();
 	          });
 	        });
@@ -156,10 +157,10 @@
 	        compile(source_code);
 	      });
 
-	      document.getElementById("open_pdf_btn").addEventListener("click", function(e) {
-	        window.open(pdf_dataurl);
-	        e.preventDefault();
-	      });
+	      // document.getElementById("open_pdf_btn").addEventListener("click", function(e) {
+// 	        window.open(pdf_dataurl);
+// 	        e.preventDefault();
+// 	      });
 
 	      var pdftex_preload = new PDFTeX("texlive.js/pdftex-worker.js");
 	      pdftex_preload = undefined;
