@@ -69,7 +69,7 @@
 
 	  \TeX{}live.js even supports images! This photo was taken by Laura Poitras/Praxis Films
 
-	  \includegraphics[height=5cm, keepaspectratio]{snowden}
+	  %\includegraphics[height=5cm, keepaspectratio]{snowden}
 	\end{document}
 	        </textarea>
 	      </div>
@@ -127,9 +127,9 @@
 	        showLoadingIndicator(true);
 	        window.location.href = "#running";
 
-	        var pdftex = new PDFTeX();
+	        var pdftex = new PDFTeX("texlive.js/pdftex-worker.js");
 	        pdftex.set_TOTAL_MEMORY(80*1024*1024).then(function() {
-	          pdftex.FS_createLazyFile('/', 'snowden.jpg', 'snowden.jpg', true, true);
+	          //pdftex.FS_createLazyFile('/', 'snowden.jpg', 'snowden.jpg', true, true);
 
 	          pdftex.on_stdout = appendOutput;
 	          pdftex.on_stderr = appendOutput;
