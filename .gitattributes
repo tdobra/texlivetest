@@ -1,0 +1,6 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# HTML and Javascript must have line endings of LF, regardless of operating system
+*.html eol=lf
+*.js eol=lf
